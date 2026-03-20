@@ -24,7 +24,7 @@ modules:
         - https://negativo17.org/repos/fedora-steam.repo
       copr:
         - atim/starship
-        - bieszczaders/kernel-cachyos
+       # - bieszczaders/kernel-cachyos
     install:
       packages:
         # Core apps
@@ -51,9 +51,9 @@ modules:
         - mesa-vulkan-drivers
 
         # CachyOS kernel
-        - kernel-cachyos-core
-        - kernel-cachyos-modules
-        - kernel-cachyos-devel-matched
+       # - kernel-cachyos-core
+       # - kernel-cachyos-modules
+       # - kernel-cachyos-devel-matched
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)

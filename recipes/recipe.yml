@@ -33,13 +33,18 @@ modules:
         - steam
         - yakuake
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
+        - fastfetch
+        - cmatrix
+        - haruna
+        - okular
+        - setroubleshoot
+        - kcalc
 
         # Gaming stack
         - gamescope
         - gamemode
         - mangohud
         - goverlay
-        - libstrangle
 
         # System tuning
         - vulkan-tools
@@ -47,6 +52,7 @@ modules:
 
         # CachyOS kernel
         - kernel-cachyos
+        - kernel-cachyos-headers
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)

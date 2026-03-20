@@ -51,7 +51,9 @@ modules:
         - mesa-vulkan-drivers
 
         # CachyOS kernel
-        - kernel-cachyos
+        - kernel-cachyos-core
+        - kernel-cachyos-modules
+        - kernel-cachyos-devel-matched
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)

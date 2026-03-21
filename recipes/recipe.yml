@@ -40,7 +40,6 @@ modules:
         - okular
         - setroubleshoot
         - kcalc
-        - uupd
 
         # Gaming stack
         - gamescope

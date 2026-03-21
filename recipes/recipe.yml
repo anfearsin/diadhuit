@@ -39,6 +39,7 @@ modules:
         - okular
         - setroubleshoot
         - kcalc
+        - uupd
 
         # Gaming stack
         - gamescope
@@ -86,6 +87,7 @@ modules:
     system:
       enabled:
         - firewalld
+        - uupd
 
   - type: os-release
     properties:

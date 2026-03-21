@@ -86,7 +86,6 @@ modules:
     system:
       enabled:
         - firewalld
-        - gamemoded
 
   - type: os-release
     properties:

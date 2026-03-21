@@ -24,7 +24,7 @@ modules:
         - https://negativo17.org/repos/fedora-steam.repo
       copr:
         - atim/starship
-       # - bieszczaders/kernel-cachyos
+        - bieszczaders/kernel-cachyos
     install:
       packages:
         # Core apps
@@ -51,6 +51,7 @@ modules:
         - mesa-vulkan-drivers
 
         # CachyOS kernel
+        - kernel-cachyos
        # - kernel-cachyos-core
        # - kernel-cachyos-modules
        # - kernel-cachyos-devel-matched
@@ -73,5 +74,22 @@ modules:
           - com.github.k4zmu2a.spacecadetpinball
           - io.github.kolunmi.Bazaar
       - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: systemd
+    system:
+      enabled:
+        - firewalld
+      disabled:
+       # - flatpak-system-update.timer
+    user:
+      enabled:
+      disabled:
+
+  - type: os-release
+    properties:
+      ID: diadhuit
+      ID_LIKE: fedora
+      NAME: DiaDhuit
+      PRETTY_NAME: DiaDhuit Linux
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

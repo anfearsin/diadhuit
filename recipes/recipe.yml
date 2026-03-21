@@ -79,11 +79,6 @@ modules:
     system:
       enabled:
         - firewalld
-      disabled:
-       # - flatpak-system-update.timer
-    user:
-      enabled:
-      disabled:
 
   - type: os-release
     properties:

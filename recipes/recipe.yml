@@ -51,7 +51,7 @@ modules:
         - mesa-vulkan-drivers
 
         # CachyOS kernel
-        - kernel-cachyos
+       # - kernel-cachyos
        # - kernel-cachyos-core
        # - kernel-cachyos-modules
        # - kernel-cachyos-devel-matched
@@ -64,6 +64,11 @@ modules:
         - plasma-discover
         - plasma-discover-flatpak
         - plasma-discover-packagekit
+
+    replace:
+      - from-repo: copr:copr.fedorainfracloud.org:bieszczaders:kernel-cachyos
+        packages:
+          - kernel
 
   - type: default-flatpaks
     configurations:

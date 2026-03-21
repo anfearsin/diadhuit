@@ -66,9 +66,11 @@ modules:
         - plasma-discover-packagekit
 
     replace:
-      - from-repo: copr:copr.fedorainfracloud.org:bieszczaders:kernel-cachyos
+      - from-repo: ublue-os
         packages:
           - kernel
+          - kernel-core
+          - kernel-modules
 
   - type: default-flatpaks
     configurations:
@@ -84,6 +86,7 @@ modules:
     system:
       enabled:
         - firewalld
+        - gamemoded
 
   - type: os-release
     properties:

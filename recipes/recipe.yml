@@ -66,11 +66,11 @@ modules:
         - plasma-discover-packagekit
 
     replace:
-      - from-repo: ublue-os
+      - from-repo:
         packages:
-          - kernel
-          - kernel-core
-          - kernel-modules
+         # - kernel
+         # - kernel-core
+         # - kernel-modules
 
   - type: default-flatpaks
     configurations:

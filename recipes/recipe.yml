@@ -65,9 +65,9 @@ modules:
         - plasma-discover-flatpak
         - plasma-discover-packagekit
 
-    replace:
-      - from-repo:
-        packages:
+  #  replace:
+    #  - from-repo:
+       # packages:
          # - kernel
          # - kernel-core
          # - kernel-modules

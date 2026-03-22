@@ -24,7 +24,7 @@ modules:
         - https://negativo17.org/repos/fedora-steam.repo
       copr:
         - atim/starship
-        - ublue-os/packages/uupd
+       # - ublue-os/packages/uupd
        # - bieszczaders/kernel-cachyos
     install:
       packages:
@@ -40,8 +40,7 @@ modules:
         - okular
         - setroubleshoot
         - kcalc
-        - uupd
-
+       
         # Gaming stack
         - gamescope
         - gamemode

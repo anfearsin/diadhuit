@@ -24,8 +24,10 @@ modules:
         - https://negativo17.org/repos/fedora-steam.repo
       copr:
         - atim/starship
-       # - ublue-os/packages/uupd
+        - ublue-os/packages
        # - bieszczaders/kernel-cachyos
+      keys:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     install:
       packages:
         # Core apps

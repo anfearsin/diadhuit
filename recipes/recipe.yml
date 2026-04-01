@@ -33,7 +33,7 @@ modules:
         # Core apps
         - uupd
         - brave-browser
-       # - @virtualization
+        - @virtualization
         - steam-devices    #swap for steam if flatpak causes issues
         - yakuake
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
@@ -42,8 +42,8 @@ modules:
         - haruna
         - okular
        # - setroubleshoot
-        - kcalc
         - starship
+        - gnome-boxes
        
         # Gaming stack
        # - gamescope
@@ -66,6 +66,7 @@ modules:
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - plasma-discover
         - plasma-discover-flatpak
+        - virt-manager
 
   #  replace:
     #  - from-repo:
@@ -83,17 +84,20 @@ modules:
           - io.github.kolunmi.Bazaar
       - scope: user # Also add Flathub user repo, but no user packages
         install:
-          - org.gnome.Boxes
+         # - org.gnome.Boxes
           - com.github.k4zmu2a.spacecadetpinball
           - com.github.tchx84.Flatseal
           - com.valvesoftware.Steam
           - de.haeckerfelix.Shortwave
-          - app.grayjay.Grayjay
+         # - app.grayjay.Grayjay
           - org.onlyoffice.desktopeditors
           - com.vysp3r.ProtonPlus
           - io.github.linx_systems.ClamUI
           - app.drey.Warp
           - it.mijorus.gearlever
+          - org.gnome.Calculator
+         # - com.github.KRTirtho.Spotube
+         # - com.stremio.Stremio
 
   - type: systemd
     system:
@@ -109,8 +113,8 @@ modules:
       
   - type: script
     snippets:
-      - "lookandfeeltool -a org.kde.breezetwilight.desktop"
-      - "plymouth-set-default-theme spinner"
+     # - "lookandfeeltool -a org.kde.breezetwilight.desktop"
+     # - "plymouth-set-default-theme spinner"
 
  # - type: initramfs
 

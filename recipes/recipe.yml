@@ -3,11 +3,11 @@
 # image will be published to ghcr.io/<user>/<name>
 name: diadhuit
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: A custom image for friends and family.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/blue-build/base-images/fedora-kinoite
+image-version: 43 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -19,18 +19,60 @@ modules:
 
   - type: dnf
     repos:
+      files:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+       # - https://negativo17.org/repos/fedora-steam.repo
       copr:
         - atim/starship
+        - ublue-os/packages
+       # - bieszczaders/kernel-cachyos
+      keys:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     install:
       packages:
-        - micro
+        # Core apps
+        - uupd
+        - brave-browser
+       # - @virtualization
+        - steam-devices    #swap for steam if flatpak causes issues
+        - yakuake
+        - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
+        - fastfetch
+        - cmatrix
+        - haruna
+        - okular
+       # - setroubleshoot
+        - kcalc
         - starship
+       
+        # Gaming stack
+       # - gamescope
+       # - gamemode
+       # - mangohud
+       # - goverlay
+       # - vulkan-tools
+       # - mesa-vulkan-drivers
+
+        # CachyOS kernel
+       # - kernel-cachyos
+       # - kernel-cachyos-core
+       # - kernel-cachyos-modules
+       # - kernel-cachyos-devel-matched
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
+        # example: removing firefox
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - plasma-discover
+        - plasma-discover-flatpak
+
+  #  replace:
+    #  - from-repo:
+       # packages:
+         # - kernel
+         # - kernel-core
+         # - kernel-modules
 
   - type: default-flatpaks
     configurations:
@@ -38,8 +80,38 @@ modules:
         scope: system
         # If no repo information is specified, Flathub will be used by default
         install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
+          - io.github.kolunmi.Bazaar
       - scope: user # Also add Flathub user repo, but no user packages
+        install:
+          - org.gnome.Boxes
+          - com.github.k4zmu2a.spacecadetpinball
+          - com.github.tchx84.Flatseal
+          - com.valvesoftware.Steam
+          - de.haeckerfelix.Shortwave
+          - app.grayjay.Grayjay
+          - org.onlyoffice.desktopeditors
+          - com.vysp3r.ProtonPlus
+          - io.github.linx_systems.ClamUI
+          - app.drey.Warp
+          - it.mijorus.gearlever
+
+  - type: systemd
+    system:
+      enabled:
+        - uupd.timer
+
+  - type: os-release
+    properties:
+      ID: diadhuit
+      ID_LIKE: fedora
+      NAME: DiaDhuit
+      PRETTY_NAME: DiaDhuit Linux
+      
+  - type: script
+    snippits:
+      - "lookandfeeltool -a org.kde.breezetwilight.desktop"
+      - "plymouth-set-default-theme spinner"
+
+ # - type: initramfs
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

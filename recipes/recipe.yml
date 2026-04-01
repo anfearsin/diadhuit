@@ -33,7 +33,6 @@ modules:
         # Core apps
         - uupd
         - brave-browser
-        - @virtualization
         - steam-devices    #swap for steam if flatpak causes issues
         - yakuake
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
@@ -41,7 +40,6 @@ modules:
         - cmatrix
         - haruna
         - okular
-       # - setroubleshoot
         - starship
         - gnome-boxes
        
@@ -52,7 +50,6 @@ modules:
        # - goverlay
        # - vulkan-tools
        # - mesa-vulkan-drivers
-
         # CachyOS kernel
        # - kernel-cachyos
        # - kernel-cachyos-core
@@ -66,7 +63,12 @@ modules:
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
         - plasma-discover
         - plasma-discover-flatpak
+    group-install:
+      skip-broken: true
+      exclude:
         - virt-manager
+      packages:
+        - virtualization
 
   #  replace:
     #  - from-repo:

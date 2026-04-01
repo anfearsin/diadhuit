@@ -113,8 +113,8 @@ modules:
       NAME: DiaDhuit
       PRETTY_NAME: DiaDhuit Linux
       
-  - type: script
-    snippets:
+ # - type: script
+   # snippets:
      # - "lookandfeeltool -a org.kde.breezetwilight.desktop"
      # - "plymouth-set-default-theme spinner"
 

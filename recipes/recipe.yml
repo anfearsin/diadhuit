@@ -25,7 +25,7 @@ modules:
       copr:
         - atim/starship
         - ublue-os/packages
-       # - bieszczaders/kernel-cachyos
+        - bieszczaders/kernel-cachyos
       keys:
         - https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
     install:
@@ -51,7 +51,7 @@ modules:
        # - vulkan-tools
        # - mesa-vulkan-drivers
         # CachyOS kernel
-       # - kernel-cachyos
+        - kernel-cachyos
        # - kernel-cachyos-core
        # - kernel-cachyos-modules
        # - kernel-cachyos-devel-matched

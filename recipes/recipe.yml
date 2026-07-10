@@ -6,8 +6,8 @@ name: diadhuit
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
-image-version: 42 # latest is also supported if you want new updates ASAP
+base-image: ghcr.io/blue-build/base-images/fedora-kinoite
+image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -21,10 +21,15 @@ modules:
     repos:
       copr:
         - atim/starship
+      files:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
     install:
       packages:
-        - micro
+        - brave-browser
         - starship
+        - steam
+        - yakuake
+        - fastfetch
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -35,11 +40,17 @@ modules:
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
+        scope: user
         # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
-      - scope: user # Also add Flathub user repo, but no user packages
+        install: # flatpaks we want all users to have and not remove
+          - app.grayjay.Grayjay
+     # - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: os-release
+    properties:
+      ID: diadhuit
+      ID_LIKE: fedora
+      NAME: DiaDhuit
+      PRETTY_NAME: DiaDhuit Linux
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

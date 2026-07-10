@@ -27,7 +27,6 @@ modules:
       packages:
         - brave-browser
         - starship
-        - steam
         - yakuake
         - fastfetch
     remove:

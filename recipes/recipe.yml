@@ -43,7 +43,12 @@ modules:
         # If no repo information is specified, Flathub will be used by default
         install: # flatpaks we want all users to have and not remove
           - app.grayjay.Grayjay
+          - org.onlyoffice.desktopeditors
+          - run org.kde.haruna
+          - org.kde.gwenview
      # - scope: user # Also add Flathub user repo, but no user packages
+
+  - type: brew
 
   - type: os-release
     properties:

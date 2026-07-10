@@ -5,9 +5,8 @@ name: diadhuit
 # description will be included in the image's metadata
 description: This is my personal OS image.
 
-# the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/blue-build/base-images/fedora-kinoite
-image-version: latest # latest is also supported if you want new updates ASAP
+image-version: latest
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
@@ -44,9 +43,8 @@ modules:
         install: # flatpaks we want all users to have and not remove
           - app.grayjay.Grayjay
           - org.onlyoffice.desktopeditors
-          - run org.kde.haruna
+          - org.kde.haruna
           - org.kde.gwenview
-     # - scope: user # Also add Flathub user repo, but no user packages
 
   - type: brew
 

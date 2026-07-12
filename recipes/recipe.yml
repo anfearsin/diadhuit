@@ -34,7 +34,7 @@ modules:
         - kalk
         - kcolorchooser
         - ktorrent
-        - fedoramediawriter
+        - mediawriter
         - elisa
         - kruler
         - kolourpaint

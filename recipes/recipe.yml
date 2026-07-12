@@ -22,10 +22,12 @@ modules:
         - atim/starship
       files:
         - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+        - https://negativo17.org/repos/fedora-steam.repo
     install:
       packages:
         - brave-origin
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
+        - steam
         - starship
         - fastfetch
         - haruna
@@ -51,17 +53,6 @@ modules:
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
-
-  - type: dnf
-    repos:
-      files:
-        - https://negativo17.org/repos/fedora-steam.repo
-    install:
-      packages:
-        - install-weak-deps: false
-          packages:
-          - steam
-          - kernel-modules-extra
 
   - type: default-flatpaks
     configurations:

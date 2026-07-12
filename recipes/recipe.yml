@@ -24,10 +24,27 @@ modules:
         - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
     install:
       packages:
-        - brave-browser
+        - brave-origin
+        - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
         - starship
-        - yakuake
         - fastfetch
+        - haruna
+        - gwenview
+        - okular
+        - kalk
+        - kcolorchooser
+        - ktorrent
+        - fedoramediawriter
+        - elisa
+        - kruler
+        - kolourpaint
+        - ksystemlog
+        - krdc
+        - koko
+        - kclock
+        - kweather
+        - kget
+        - akregator
     remove:
       packages:
         # example: removing firefox (in favor of the flatpak)
@@ -35,16 +52,24 @@ modules:
         - firefox
         - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
 
+   - type: dnf
+     repos:
+       files:
+         - https://negativo17.org/repos/fedora-steam.repo
+     install:
+      packages:
+        - install-weak-deps: false
+          packages:
+          - steam
+          - kernel-modules-extra
+
   - type: default-flatpaks
     configurations:
       - notify: true # Send notification after install/uninstall is finished (true/false)
         scope: user
         # If no repo information is specified, Flathub will be used by default
-        install: # flatpaks we want all users to have and not remove
-          - app.grayjay.Grayjay
-          - org.onlyoffice.desktopeditors
-          - org.kde.haruna
-          - org.kde.gwenview
+        install:
+          - com.github.k4zmu2a.spacecadetpinball
 
   - type: brew
 

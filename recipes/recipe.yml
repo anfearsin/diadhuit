@@ -28,6 +28,7 @@ modules:
       packages:
         - brave-origin
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
+        - yakuake
         - steam
         - starship
         - fastfetch

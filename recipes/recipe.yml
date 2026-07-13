@@ -28,6 +28,7 @@ modules:
       packages:
         - brave-origin
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
+        - https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm
         - yakuake
         - steam
         - starship

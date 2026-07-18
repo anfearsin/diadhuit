@@ -27,12 +27,10 @@ modules:
     install:
       packages:
         - brave-origin
-        - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.4-1.noarch.rpm
         - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm  # Change when stable released
         - https://proton.me/download/PassDesktop/linux/x64/ProtonPass.rpm
         - https://proton.me/download/meet/linux/ProtonMeet-desktop.rpm
         - https://proton.me/download/authenticator/linux/ProtonAuthenticator.rpm
-        - proton-vpn-gnome-desktop
         - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm  # Temporary
         - https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm  # On trial
         - yakuake
@@ -66,6 +64,8 @@ modules:
         scope: user
         # If no repo information is specified, Flathub will be used by default
         install:
+         # - app.grayjay.Grayjay
+          - com.protonvpn.www
           - com.github.k4zmu2a.spacecadetpinball
 
   - type: brew

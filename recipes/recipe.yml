@@ -23,12 +23,20 @@ modules:
         - atim/starship
       files:
         - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+      keys:
+        - https://repo.protonvpn.com/fedora-44-stable/public_key.asc
       nonfree: negativo17
     install:
       packages:
         - brave-origin
-        - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm
-        - https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm
+        - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.4-1.noarch.rpm
+        - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm  # Change when stable released
+        - https://proton.me/download/PassDesktop/linux/x64/ProtonPass.rpm
+        - https://proton.me/download/meet/linux/ProtonMeet-desktop.rpm
+        - https://proton.me/download/authenticator/linux/ProtonAuthenticator.rpm
+        - proton-vpn-gnome-desktop
+        - https://bitwarden.com/download/?app=desktop&platform=linux&variant=rpm  # Temporary
+        - https://cdn.filen.io/@filen/desktop/release/latest/Filen_linux_x86_64.rpm  # On trial
         - yakuake
         - steam
         - starship

@@ -23,8 +23,6 @@ modules:
         - atim/starship
       files:
         - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-      keys:
-        - https://repo.protonvpn.com/fedora-44-stable/public_key.asc
       nonfree: negativo17
     install:
       packages:

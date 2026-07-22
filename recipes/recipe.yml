@@ -65,8 +65,8 @@ modules:
         # If no repo information is specified, Flathub will be used by default
         install:
          # - app.grayjay.Grayjay
-          - com.protonvpn.www
-          - com.github.k4zmu2a.spacecadetpinball
+         # - com.protonvpn.www
+         # - com.github.k4zmu2a.spacecadetpinball
 
   - type: brew
 

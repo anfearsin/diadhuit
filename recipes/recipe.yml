@@ -6,7 +6,7 @@ name: diadhuit
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/kinoite-main
 image-version: latest # You can pin to a specific version of Fedora as well
 
 # module configuration, executed in order
@@ -15,31 +15,48 @@ modules:
   - type: files
     files:
       - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+        destination: / # copies files/system/* (* means everything inside it) into image's root folder /
+
+  - type: os-release
+    properties:
+      ID: diadhuit
+      NAME: DiaDhuit
+      PRETTY_NAME: DiaDhuit Linux
+      DEFAULT_HOSTNAME: DiaDhuit
 
   - type: dnf
     repos:
       copr:
         - atim/starship
+      files:
+        - https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
     install:
       packages:
-        - micro
+        - steam
         - starship
+        - brave-origin
+        - yakuake
+        - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm  # Change when stable released
+        - https://proton.me/download/PassDesktop/linux/x64/ProtonPass.rpm
+        - https://proton.me/download/meet/linux/ProtonMeet-desktop.rpm
+        - https://proton.me/download/authenticator/linux/ProtonAuthenticator.rpm
     remove:
       packages:
-        # example: removing firefox (in favor of the flatpak)
+        # example: removing firefox
         # "firefox" is the main package, "firefox-langpacks" is a dependency
         - firefox
-        - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+        - firefox-langpacks
 
   - type: default-flatpaks
     configurations:
-      - notify: true # Send notification after install/uninstall is finished (true/false)
-        scope: system
+      - notify: false # Send notification after install/uninstall is finished (true/false)
+        scope: user
         # If no repo information is specified, Flathub will be used by default
-        install: # system flatpaks we want all users to have and not remove
-          - org.mozilla.firefox
-          - org.gnome.Loupe
-      - scope: user # Also add Flathub user repo, but no user packages
+        install:
+          - com.protonvpn.www # temp
+      #- scope: system # Also add Flathub system repo, but no system packages
+
+  - type: brew
+    brew-analytics: false
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

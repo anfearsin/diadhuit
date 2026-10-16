@@ -17,9 +17,10 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into image's root folder /
 
-  - type: script
-    scripts:
-      - protonrepo.sh
+  - type: dnf
+    install:
+      packages:
+        - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.4-1.noarch.rpm
 
   - type: os-release
     properties:

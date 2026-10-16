@@ -58,9 +58,8 @@ modules:
   - type: brew
     brew-analytics: false
 
-  - type: dnf
-    install:
-      packages:
-        - proton-vpn-gnome-desktop
+  - type: script
+    snippets:
+      - 'SYSTEMD_OFFLINE=1 dnf5 install -y proton-vpn-gnome-desktop'
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

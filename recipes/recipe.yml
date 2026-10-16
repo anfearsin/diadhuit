@@ -17,11 +17,6 @@ modules:
       - source: system
         destination: / # copies files/system/* (* means everything inside it) into image's root folder /
 
-  - type: dnf
-    install:
-      packages:
-        - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.4-1.noarch.rpm
-
   - type: os-release
     properties:
       ID: diadhuit
@@ -41,7 +36,7 @@ modules:
         - starship
         - brave-origin
         - yakuake
-        - proton-vpn-gnome-desktop
+        - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.4-1.noarch.rpm
         - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm  # Change when stable released
         - https://proton.me/download/PassDesktop/linux/x64/ProtonPass.rpm
         - https://proton.me/download/meet/linux/ProtonMeet-desktop.rpm
@@ -62,5 +57,10 @@ modules:
 
   - type: brew
     brew-analytics: false
+
+  - type: dnf
+    install:
+      packages:
+        - proton-vpn-gnome-desktop
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully

@@ -18,9 +18,8 @@ modules:
         destination: / # copies files/system/* (* means everything inside it) into image's root folder /
 
   - type: script
-    snippets:
-      - "wget "https://repo.protonvpn.com/fedora-$(cat /etc/fedora-release | cut -d' ' -f 3)-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.4-1.noarch.rpm""
-      - "sudo dnf install ./protonvpn-stable-release-1.0.4-1.noarch.rpm && sudo dnf check-update --refresh"
+    scripts:
+      - protonrepo.sh
 
   - type: os-release
     properties:

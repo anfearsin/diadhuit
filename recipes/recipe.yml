@@ -36,7 +36,7 @@ modules:
         - starship
         - brave-origin
         - yakuake
-        - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.4-1.noarch.rpm
+        - https://repo.protonvpn.com/fedora-%OS_VERSION%-stable/protonvpn-stable-release/protonvpn-stable-release-1.0.5-1.noarch.rpm
         - https://proton.me/download/mail/linux/ProtonMail-desktop-beta.rpm  # Change when stable released
         - https://proton.me/download/PassDesktop/linux/x64/ProtonPass.rpm
         - https://proton.me/download/meet/linux/ProtonMeet-desktop.rpm
